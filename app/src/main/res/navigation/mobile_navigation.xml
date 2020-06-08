@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.nasande.pharmaciemayamaya.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_ordonnance"
+        android:name="com.nasande.pharmaciemayamaya.ui.OrdonnanceFragment"
+        android:label="@string/menu_ordo"
+        tools:layout="@layout/ordonnance_fragment" />
+
+    <fragment
+        android:id="@+id/nav_produits"
+        android:name="com.nasande.pharmaciemayamaya.ui.ProduitFragment"
+        android:label="@string/menu_panier"
+        tools:layout="@layout/produit_fragment" />
+
+    <fragment
+        android:id="@+id/nav_infos"
+        android:name="com.nasande.pharmaciemayamaya.ui.InfoFragment"
+        android:label="@string/menu_info"
+        tools:layout="@layout/info_fragment" />
+
+    <fragment
+        android:id="@+id/nav_contact"
+        android:name="com.nasande.pharmaciemayamaya.ui.ContactFragment"
+        android:label="@string/menu_contact"
+        tools:layout="@layout/contact_fragment" />
+
+
+</navigation>
