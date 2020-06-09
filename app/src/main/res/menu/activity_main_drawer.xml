@@ -15,7 +15,7 @@
         <item
             android:id="@+id/nav_produits"
             android:icon="@drawable/ic_panier"
-            android:title="@string/menu_panier" />
+            android:title="@string/menu_produits" />
         <item
             android:id="@+id/nav_infos"
             android:icon="@drawable/ic_info_grey"

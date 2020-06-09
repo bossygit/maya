@@ -16,5 +16,6 @@
     <string name="menu_info">Info</string>
     <string name="menu_contact">Contact</string>
     <string name="menu_panier">Cart</string>
+    <string name="menu_produits">Produits</string>
     <string name="menu_ordo">Ordonnance</string>
 </resources>
