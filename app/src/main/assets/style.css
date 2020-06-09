@@ -1,3 +1,4 @@
-#block-home-about,.button.navbar-toggler.nav-button,#main-menu {
+#block-home-about,.button.navbar-toggler.nav-button,#main-menu,.navbar-toggler:not(:disabled):not(.disabled) {
 display:none;
 }
+
