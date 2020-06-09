@@ -33,7 +33,7 @@ public class OrdonnanceFragment extends Fragment {
                              @Nullable Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.ordonnance_fragment, container, false);
 
-        mWebView = (WebView)root.findViewById(R.id.webview_home);
+        mWebView = (WebView)root.findViewById(R.id.webview_ordonnance);
         mWebView.getSettings().setJavaScriptEnabled(true);
         mWebView.setWebViewClient(new WebViewClient() {
 
