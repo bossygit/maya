@@ -1,4 +1,4 @@
-#block-home-about,.button.navbar-toggler.nav-button,#main-menu,.navbar-toggler:not(:disabled):not(.disabled) {
+#block-home-about,.button.navbar-toggler.nav-button,#main-menu,.navbar-toggler:not(:disabled):not(.disabled),.footer-widget-section{
 display:none;
 }
 
