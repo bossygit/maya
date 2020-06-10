@@ -19,4 +19,10 @@
     <string name="menu_panier">Panier</string>
     <string name="menu_produits">Products</string>
     <string name="menu_ordo">Ordonnance</string>
+    <string name="ordo_form_name">First name</string>
+    <string name="ordo_form_first">Last name</string>
+    <string name="ordo_form_number">Telephone number</string>
+    <string name="ordo_form_photo">Pick your prescription photo</string>
+    <string name="ordo_form_comments">Comments</string>
+    <string name="ordo_form_file">No file selected</string>
 </resources>

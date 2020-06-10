@@ -22,7 +22,7 @@ import java.io.InputStream;
 public class OrdonnanceFragment extends Fragment {
 
     private OrdonnanceViewModel mViewModel;
-    public WebView mWebView;
+
 
     public static OrdonnanceFragment newInstance() {
         return new OrdonnanceFragment();
@@ -33,20 +33,6 @@ public class OrdonnanceFragment extends Fragment {
                              @Nullable Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.ordonnance_fragment, container, false);
 
-        mWebView = (WebView)root.findViewById(R.id.webview_ordonnance);
-        mWebView.getSettings().setJavaScriptEnabled(true);
-        mWebView.setWebViewClient(new WebViewClient() {
-
-            @Override
-            public void onPageFinished(WebView view, String url) {
-
-                // Inject CSS when page is done loading
-                injectCSS();
-                super.onPageFinished(view, url);
-            }
-        });
-
-        mWebView.loadUrl("http://mayamaya.nasande.cg/node/217");
 
         return root;
     }
@@ -59,31 +45,6 @@ public class OrdonnanceFragment extends Fragment {
 
     }
 
-    private void injectCSS() {
-        if(getActivity()!=null){
 
-
-            try {
-                InputStream inputStream = getActivity().getAssets().open("style.css");
-
-                byte[] buffer = new byte[inputStream.available()];
-                inputStream.read(buffer);
-                inputStream.close();
-                String encoded = Base64.encodeToString(buffer, Base64.NO_WRAP);
-                mWebView.loadUrl("javascript:(function() {" +
-                        "var parent = document.getElementsByTagName('head').item(0);" +
-                        "var style = document.createElement('style');" +
-                        "style.type = 'text/css';" +
-                        // Tell the browser to BASE64-decode the string into your script !!!
-                        "style.innerHTML = window.atob('" + encoded + "');" +
-                        "parent.appendChild(style)" +
-                        "})()");
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
-
-
-    }
 
 }
