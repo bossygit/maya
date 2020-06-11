@@ -10,7 +10,7 @@
             android:title="@string/menu_home" />
         <item
             android:id="@+id/nav_ordonnance"
-            android:icon="@drawable/ic_insert_ordonnance"
+            android:icon="@drawable/ic_ordo"
             android:title="@string/menu_ordo" />
         <item
             android:id="@+id/nav_produits"
@@ -18,11 +18,11 @@
             android:title="@string/menu_produits" />
         <item
             android:id="@+id/nav_infos"
-            android:icon="@drawable/ic_info_grey"
+            android:icon="@drawable/ic_info"
             android:title="@string/menu_info" />
         <item
             android:id="@+id/nav_contact"
-            android:icon="@drawable/ic_email"
+            android:icon="@drawable/ic_contact"
             android:title="@string/menu_contact" />
     </group>
 
