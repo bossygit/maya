@@ -11,6 +11,8 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -109,7 +111,72 @@ public class OrdonnanceFragment extends Fragment implements EasyPermissions.Perm
         btnChooseFile = root.findViewById(R.id.photo);
         mProgressDialog.setIndeterminate(true);
         mProgressDialog.setMessage("Connexion ...");
+        btnChooseFile.setEnabled(false);
+        mEnvois.setEnabled(false);
         getMyPerms();
+
+        mTitre.addTextChangedListener(new TextWatcher() {
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before,
+                                      int count) {
+                // TODO Auto-generated method stub
+
+                if (s.toString().equals("")) {
+                    mTitre.setError("Saisissez votre nom");
+                    btnChooseFile.setEnabled(false);
+                } else {
+                    btnChooseFile.setEnabled(true);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count,
+                                          int after) {
+                // TODO Auto-generated method stub
+
+            }
+
+
+        });
+
+
+        mNumero.addTextChangedListener(new TextWatcher() {
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before,
+                                      int count) {
+                // TODO Auto-generated method stub
+
+                if (s.toString().equals("")) {
+                    mNumero.setError("Saisissez un numéro Mtn ou Airtel valide");
+                    btnChooseFile.setEnabled(false);
+                } else {
+                    btnChooseFile.setEnabled(true);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count,
+                                          int after) {
+                // TODO Auto-generated method stub
+
+            }
+
+
+        });
+
+
 
         sharedPrefManager = new SharedPrefManager(getActivity());
 
@@ -167,6 +234,16 @@ public class OrdonnanceFragment extends Fragment implements EasyPermissions.Perm
 
                 }
             });
+
+        mTitre.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View arg0, boolean arg1) {
+                mTitre.setError(null);
+                if (mTitre.getText().toString().trim().equalsIgnoreCase("")) {
+                    mTitre.setError("Entrer votre nom");
+                }
+            }
+        });
 
 
 
@@ -295,6 +372,7 @@ public class OrdonnanceFragment extends Fragment implements EasyPermissions.Perm
                     fileUri = data.getData();
                     fichier= fH.sendPath(fileUri,getActivity());
                     tvItemPath.setText(fichier);
+                    mEnvois.setEnabled(true);
 
                     break;
 
@@ -351,7 +429,10 @@ public class OrdonnanceFragment extends Fragment implements EasyPermissions.Perm
                 }
 
                 else {
-                    Toast.makeText(getActivity(), "Error", Toast.LENGTH_SHORT).show();
+                    mTitre.getText().clear();
+                    mNumero.getText().clear();
+                    mComments.getText().clear();
+                    tvItemPath.setText("Une erreur s'est produite");
                     hideDialog();
 
 
@@ -386,7 +467,12 @@ public class OrdonnanceFragment extends Fragment implements EasyPermissions.Perm
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                 if (response.isSuccessful()){
-                    Toast.makeText(getActivity(), "Contenu crée", Toast.LENGTH_SHORT).show();
+
+                    mTitre.getText().clear();
+                    mNumero.getText().clear();
+                    mComments.getText().clear();
+
+                    tvItemPath.setText("Nous avons recons votre ordonnance. Nous contactons dans les plus bref delais");
 
 
                     hideDialog();
@@ -402,7 +488,11 @@ public class OrdonnanceFragment extends Fragment implements EasyPermissions.Perm
                 }
 
                 else {
-                    Toast.makeText(getActivity(), "Contenu non crée", Toast.LENGTH_SHORT).show();
+
+                    mTitre.getText().clear();
+                    mNumero.getText().clear();
+                    mComments.getText().clear();
+                    tvItemPath.setText("Une erreur s'est produite");
                     hideDialog();
 
 
@@ -412,7 +502,10 @@ public class OrdonnanceFragment extends Fragment implements EasyPermissions.Perm
 
             @Override
             public void onFailure(Call<ResponseBody> call, Throwable t) {
-                Toast.makeText(getActivity(), "Failure", Toast.LENGTH_SHORT).show();
+                mTitre.getText().clear();
+                mNumero.getText().clear();
+                mComments.getText().clear();
+                tvItemPath.setText("Une erreur s'est produite");
                 hideDialog();
 
             }
