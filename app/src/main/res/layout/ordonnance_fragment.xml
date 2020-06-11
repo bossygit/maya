@@ -16,14 +16,21 @@
         android:backgroundTintMode="multiply"
         android:padding="10dp">
 
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="149dp"
+            android:layout_height="144dp"
+            android:src="@mipmap/ic_launcher_foreground"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_margin="9dp"/>
+
 
         <EditText
             android:id="@+id/nom"
-            android:layout_width="0dp"
+            android:layout_width="664dp"
             android:layout_height="45dp"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="281dp"
-            android:layout_marginEnd="24dp"
             android:backgroundTint="#FFFFFF"
             android:ems="10"
             android:hint="@string/ordo_form_name"
@@ -32,14 +39,12 @@
             android:textColorHint="#FFFFFF"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/logo" />
 
         <EditText
             android:id="@+id/telephone"
-            android:layout_width="0dp"
+            android:layout_width="664dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginEnd="24dp"
             android:backgroundTint="#FFFFFF"
             android:ems="10"
             android:hint="Numero de téléphone"
@@ -59,7 +64,8 @@
             android:textColor="#FFFFFF"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            tools:layout_editor_absoluteY="407dp" />
+            app:layout_constraintTop_toBottomOf="@+id/telephone"
+            android:layout_margin="9dp"/>
 
         <TextView
             android:id="@+id/file_path"
@@ -68,47 +74,34 @@
             android:text="@string/ordo_form_file"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            tools:layout_editor_absoluteX="180dp"
-            tools:layout_editor_absoluteY="464dp" />
+            app:layout_constraintTop_toBottomOf="@+id/photo"
+            android:layout_margin="9dp"/>
 
         <EditText
             android:id="@+id/comments"
-            android:layout_width="0dp"
+            android:layout_width="712dp"
             android:layout_height="81dp"
-            android:layout_marginTop="45dp"
             android:background="@drawable/rounded_edittext"
             android:ems="10"
             android:gravity="start|top"
             android:inputType="textMultiLine"
+            android:padding="9dp"
+            android:layout_margin="9dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/photo" />
+            app:layout_constraintTop_toBottomOf="@+id/file_path" />
 
         <Button
             android:id="@+id/form_envois"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="45dp"
             android:background="@drawable/button"
             android:text="@string/menu_send"
             android:textColor="#FFFFFF"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/comments"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="149dp"
-            android:layout_height="144dp"
-            android:layout_marginTop="92dp"
-            android:src="@mipmap/ic_launcher_foreground"
-            app:layout_constraintBottom_toTopOf="@+id/nom"
+            android:layout_margin="9dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/comments" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

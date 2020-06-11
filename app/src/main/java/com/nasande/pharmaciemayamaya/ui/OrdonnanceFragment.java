@@ -235,15 +235,7 @@ public class OrdonnanceFragment extends Fragment implements EasyPermissions.Perm
                 }
             });
 
-        mTitre.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View arg0, boolean arg1) {
-                mTitre.setError(null);
-                if (mTitre.getText().toString().trim().equalsIgnoreCase("")) {
-                    mTitre.setError("Entrer votre nom");
-                }
-            }
-        });
+
 
 
 
@@ -430,6 +422,7 @@ public class OrdonnanceFragment extends Fragment implements EasyPermissions.Perm
 
                 else {
                     mTitre.getText().clear();
+
                     mNumero.getText().clear();
                     mComments.getText().clear();
                     tvItemPath.setText("Une erreur s'est produite");

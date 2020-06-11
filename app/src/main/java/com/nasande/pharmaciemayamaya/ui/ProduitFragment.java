@@ -45,7 +45,7 @@ public class ProduitFragment extends Fragment {
             }
         });
 
-        mWebView.loadUrl("http://mayamaya.nasande.cg/products");
+        mWebView.loadUrl("https://pharmaciemayamaya.cg/products");
         return root;
     }
 

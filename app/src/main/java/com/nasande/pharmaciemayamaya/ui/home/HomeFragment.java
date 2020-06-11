@@ -44,7 +44,7 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        mWebView.loadUrl("http://mayamaya.nasande.cg");
+        mWebView.loadUrl("https://pharmaciemayamaya.cg");
 
 
 

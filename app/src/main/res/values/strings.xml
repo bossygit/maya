@@ -18,12 +18,12 @@
     <string name="menu_panier">Panier</string>
     <string name="menu_produits">Produits</string>
     <string name="menu_ordo">Ordonnance</string>
-    <string name="ordo_form_name">First name and last name</string>
+    <string name="ordo_form_name">Full name</string>
     <string name="ordo_form_first">Last name</string>
     <string name="ordo_form_number">Telephone number</string>
     <string name="ordo_form_photo">Photo</string>
     <string name="ordo_form_comments">Commentaires</string>
-    <string name="ordo_form_file">Aucun fichier selectionné</string>
+    <string name="ordo_form_file">No  file selected</string>
     <string name="title_activity_login">LoginActivity</string>
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
