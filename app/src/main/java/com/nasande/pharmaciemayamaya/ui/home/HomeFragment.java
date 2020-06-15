@@ -3,6 +3,7 @@ package com.nasande.pharmaciemayamaya.ui.home;
 import android.content.res.AssetManager;
 import android.os.Bundle;
 import android.util.Base64;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -45,6 +46,15 @@ public class HomeFragment extends Fragment {
         });
 
         mWebView.loadUrl("https://pharmaciemayamaya.cg");
+        mWebView.setOnKeyListener(new View.OnKeyListener(){
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                if ((keyCode == KeyEvent.KEYCODE_BACK) && mWebView.canGoBack()) {
+                    mWebView.goBack();
+                    return true;
+                }
+                return false;
+            }
+        });
 
 
 
